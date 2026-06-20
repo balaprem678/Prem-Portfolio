@@ -1,0 +1,162 @@
+.skills-section {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.section-tag {
+  text-align: center;
+  color: #7c3aed;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid #ececec;
+  transition: all 0.35s ease;
+
+  &:hover {
+    transform: translateX(10px);
+    border-color: #7c3aed;
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
+
+    .skill-icon {
+      transform: rotate(10deg) scale(1.08);
+    }
+
+    .skill-number {
+      color: #7c3aed;
+    }
+  }
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.35s ease;
+}
+
+.double-icon {
+  display: flex;
+  gap: 6px;
+  font-size: 22px;
+}
+
+.skill-content {
+  flex: 1;
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #6b7280;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+}
+
+.skill-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #e5e7eb;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .skill-item {
+    align-items: flex-start;
+  }
+
+  .skill-number {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 80px 0;
+  }
+
+  .skill-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skill-content {
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  .skill-number {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-item {
+    padding: 24px;
+  }
+
+  .skill-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+}
