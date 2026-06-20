@@ -21,7 +21,7 @@ const steps = [
   },
 ];
 
-const icons = {
+const icons: Record<string, string> = {
   '1': '📋',
   '2': '💻',
   '3': '🔗',
