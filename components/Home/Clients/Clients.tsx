@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import './Clients.scss';
+import  './Clients.scss';
 import { Images } from '@/components/Utilis/Images';
 
 const clients = [

@@ -1,14 +1,14 @@
-import Navbar from '@/components/Navbar'
 import Hero from '@/components/Home/Hero/Hero'
 import About from '@/components/Home/About/About'
 import WorkProcess from '@/components/Home/Workprocess/WorkProcess'
-import Portfolio from '@/components/Portfolio'
 import CTABanner from '@/components/Home/CTABanner'
-import Blog from '@/components/Home/Skills/Skills'
 import Services from '@/components/Home/Services'
-import Clients from '@/components/Clients'
 import Contact from '@/components/Home/Contact'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/Header/Navbar'
+import Portfolio from '@/components/Home/Portfolio/Portfolio'
+import Clients from '@/components/Home/Clients/Clients'
+import Footer from '@/components/Footer/Footer'
+import SkillsTree from '@/components/Home/Skills/Skills'
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <WorkProcess />
         <Portfolio />
         <CTABanner />
-        <Blog />
+        <SkillsTree />
         <Services />
         <Clients />
         <Contact />
