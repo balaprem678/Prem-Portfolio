@@ -50,12 +50,12 @@
 
   .social-icon {
     img {
-      filter: grayscale(1);
+     filter: grayscale(100%) brightness(80%);
     }
 
     &:hover {
       img {
-        filter: grayscale(0);
+        filter: unset;
       }
     }
   }
@@ -64,25 +64,15 @@
 .social-icon {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: #f3f4f6;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: #6b7280;
-  text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-3px);
   }
 
-  &.active {
-    background: #7c3aed;
-    color: #fff;
-  }
 }
 
 .about-subtitle {

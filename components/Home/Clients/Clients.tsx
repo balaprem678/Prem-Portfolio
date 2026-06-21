@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import './Clients.scss';
-import { Images } from './Utilis/Images';
+import { Images } from '@/components/Utilis/Images';
 
 const clients = [
   { name: 'Pillais', logo: Images.client_logo_1.src },

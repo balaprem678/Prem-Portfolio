@@ -7,6 +7,7 @@ import myprofile2 from "../../public/assests/images/myprofile_2.png"
 import instagram from "../../public/assests/images/socialmedia/instagram.png"
 import linkedin from "../../public/assests/images/socialmedia/linkedin.png"
 import whatsapp from "../../public/assests/images/socialmedia/whatsapp.png"
+import github from "../../public/assests/images/socialmedia/github.png"
 
 // Project Images
 import pillaisin from "../../public/assests/images/Projects/pillaisin.png"
@@ -27,7 +28,8 @@ export const Images = {
     instagram,
     linkedin,
     whatsapp,
-
+    github,
+    
     // Project Images
     pillaisin,
     the45ers,

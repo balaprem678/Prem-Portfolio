@@ -1,6 +1,7 @@
-import { Images } from "./Utilis/Images"
+import { Images } from "../Utilis/Images"
 
-const navLinks = ['Home', 'About', 'Process', 'Portfolio', 'Blog', 'Services']
+
+const navLinks = ['Home', 'About', 'Process', 'Portfolio', 'Skills', 'Services']
 
 export default function Footer() {
   return (

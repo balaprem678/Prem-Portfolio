@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import './Portfolio.scss';
-import { Images } from "./Utilis/Images";
+import { Images } from '@/components/Utilis/Images';
 
 const projects = [
   {

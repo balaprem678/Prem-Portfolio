@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Images } from './Utilis/Images'
+import { Images } from '../Utilis/Images'
 
 export default function Contact() {
   const [form, setForm] = useState({
