@@ -19,7 +19,7 @@ export default function Hero() {
 
           <p className="hero-description">
             I&apos;m a Frontend <strong>UI Designer</strong> &
-            <strong>Developer</strong> based have passion
+            <strong> Developer</strong> based have passion
             to build innovative and beautiful web applications through clean
             design.
           </p>

@@ -9,32 +9,35 @@ import {
   FaFigma,
   FaLaptopCode,
 } from "react-icons/fa";
-
 import {
   SiMongodb,
   SiAngular,
   SiClaude,
   SiPerplexity,
+  SiTypescript,
+  SiTailwindcss,
+  SiBootstrap,
+  SiJavascript,
 } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 const services = [
   {
     id: 1,
     title: "Frontend Development",
-    description:
-      "HTML5, CSS3, SCSS, SASS, Bootstrap, Tailwind CSS, JavaScript, TypeScript",
+    tags: ["HTML5", "CSS3", "SCSS", "SASS", "Bootstrap", "Tailwind", "JavaScript", "TypeScript"],
     icon: <FaLaptopCode />,
   },
   {
     id: 2,
     title: "Backend Development",
-    description: "Node.js, RESTful API Development",
+    tags: ["Node.js", "RESTful APIs", "Express.js", "API Integration"],
     icon: <FaNodeJs />,
   },
   {
     id: 3,
     title: "Frameworks & Libraries",
-    description: "React.js, Angular.js",
+    tags: ["React.js", "Angular.js", "Next.js"],
     icon: (
       <>
         <FaReact />
@@ -45,25 +48,25 @@ const services = [
   {
     id: 4,
     title: "Database Management",
-    description: "MongoDB Database Design & Integration",
+    tags: ["MongoDB", "Database Design", "Data Modeling", "Firebase"],
     icon: <SiMongodb />,
   },
   {
     id: 5,
     title: "Version Control & Tools",
-    description: "Git, GitHub, Bitbucket, Jira",
+    tags: ["Git", "GitHub", "Bitbucket", "Jira", "CI/CD"],
     icon: <FaGitAlt />,
   },
   {
     id: 6,
     title: "Design & Prototyping",
-    description: "Figma, Photoshop, Adobe XD",
+    tags: ["Figma", "Photoshop", "Adobe XD", "UI/UX Design"],
     icon: <FaFigma />,
   },
   {
     id: 7,
     title: "AI Tools",
-    description: "Claude AI, Perplexity AI",
+    tags: ["Claude AI", "Perplexity AI", "ChatGPT", "AI Workflows"],
     icon: (
       <>
         <SiClaude />
@@ -74,8 +77,7 @@ const services = [
   {
     id: 8,
     title: "WordPress Development",
-    description:
-      "Theme Customization, Plugin Integration, Responsive Design, UI Improvements",
+    tags: ["Theme Customization", "Plugin Integration", "Responsive Design", "WooCommerce"],
     icon: <FaWordpress />,
   },
 ];
@@ -85,26 +87,28 @@ export default function Skills() {
   return (
     <section className="skills-section" id="skills" ref={containerRef}>
       <div className="container">
-        <span className="section-tag">TECHNICAL EXPERTISE</span>
+        <div className="section-header">
+          <span className="section-tag">✦ Technical Expertise</span>
 
-        <h2 className="section-title">
-          My <span>Skills</span>
-        </h2>
+          <h2 className="section-title">
+            My <span>Skills</span>
+          </h2>
 
-        <p className="section-subtitle">
-          Experienced Frontend Developer with expertise in modern web
-          technologies, responsive UI development, API integration,
-          WordPress customization and AI-powered workflows.
-        </p>
+          <div className="title-underline"></div>
+
+          <p className="section-subtitle">
+            Experienced Frontend Developer with expertise in modern web
+            technologies, responsive UI development, API integration,
+            WordPress customization, and AI-powered workflows.
+          </p>
+        </div>
 
         <div className="skills-grid">
           {services.map((item) => (
             <div className="skill-card" key={item.id}>
               <div className="card-glow"></div>
 
-              <div className="skill-icon">
-                {item.icon}
-              </div>
+              <div className="skill-icon">{item.icon}</div>
 
               <span className="skill-number">
                 {String(item.id).padStart(2, "0")}
@@ -112,7 +116,11 @@ export default function Skills() {
 
               <h3>{item.title}</h3>
 
-              <p>{item.description}</p>
+              <div className="skill-tags">
+                {item.tags.map((tag, i) => (
+                  <span key={i}>{tag}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
