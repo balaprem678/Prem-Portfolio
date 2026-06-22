@@ -1,6 +1,8 @@
+'use client';
 import Image from 'next/image';
 import  './Clients.scss';
 import { Images } from '@/components/Utilis/Images';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const clients = [
   { name: 'Pillais', logo: Images.client_logo_1.src },
@@ -9,21 +11,23 @@ const clients = [
 ];
 
 export default function Clients() {
-  return (
-    <section className="clients">
-      <div className="container">
-        <p className="clients-tag">Trusted By</p>
+  const containerRef = useScrollAnimation();
 
-        <h2 className="clients-title">
+  return (
+    <section className="clients" ref={containerRef}>
+      <div className="container">
+        <p className="clients-tag scroll-animate-down">Trusted By</p>
+
+        <h2 className="clients-title scroll-animate-up">
           Projects & Clients
         </h2>
 
-        <p className="clients-subtitle">
+        <p className="clients-subtitle scroll-animate-up">
           Businesses and organizations I've worked with to create
           responsive web applications, CMS platforms, and eCommerce solutions.
         </p>
 
-        <div className="clients-grid">
+        <div className="clients-grid scroll-animate-stagger">
           {clients.map((client) => (
             <div key={client.name} className="client-card">
               <Image

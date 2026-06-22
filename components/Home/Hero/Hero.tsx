@@ -1,13 +1,16 @@
+'use client';
 import { Images } from "@/components/Utilis/Images";
 import "./Hero.scss";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function Hero() {
+  const containerRef = useScrollAnimation();
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" ref={containerRef}>
       <div className="hero-container">
         {/* Left */}
-        <div className="hero-content">
-          <p className="hero-subtitle">Welcome to my portfolio</p>
+        <div className="hero-content scroll-animate-left">
+          <p className="hero-subtitle scroll-animate-down">Welcome to my portfolio</p>
 
           <h1 className="hero-title">
             Hello, I&apos;m <br />

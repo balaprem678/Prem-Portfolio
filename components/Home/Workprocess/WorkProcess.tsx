@@ -1,4 +1,6 @@
+'use client';
 import './WorkProcess.scss';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 type Step = {
   num: string;
@@ -37,8 +39,9 @@ const icons: Record<string, string> = {
 };
 
 export default function WorkProcess() {
+  const containerRef = useScrollAnimation();
   return (
-    <section id="process" className="work-process">
+    <section id="process" className="work-process" ref={containerRef}>
       <div className="process-grid">
         {/* Left */}
         <div className="process-content">
@@ -56,9 +59,9 @@ export default function WorkProcess() {
         </div>
 
         {/* Right */}
-        <div className="process-cards">
+        <div className="process-cards scroll-animate-stagger">
           {steps.map((step) => (
-            <div key={step.num} className="process-card card-shadow">
+            <div key={step.num} className="process-card card-shadow scroll-animate-up">
               <div className="process-icon">{icons[step.num]}</div>
 
               <h3 className="process-card-title">

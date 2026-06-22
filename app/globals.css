@@ -4,14 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-padding-top: 80px;
+}
 
 body {
   font-family: 'Inter', sans-serif;
   color: #1e1e2e;
   background: #fff;
+  overflow-x: hidden;
 }
 
 .gradient-hero {
@@ -37,7 +44,12 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
-.btn-primary:hover { background: #6d28d9; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(124,58,237,0.3); }
+
+.btn-primary:hover {
+  background: #6d28d9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
 
 .btn-outline {
   border: 1.5px solid #7c3aed;
@@ -54,7 +66,11 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
-.btn-outline:hover { background: #7c3aed; color: #fff; }
+
+.btn-outline:hover {
+  background: #7c3aed;
+  color: #fff;
+}
 
 .section-title {
   font-size: 36px;
@@ -63,6 +79,7 @@ body {
   text-align: center;
   margin-bottom: 12px;
 }
+
 .section-subtitle {
   font-size: 15px;
   color: #6b7280;
@@ -72,5 +89,185 @@ body {
   line-height: 1.7;
 }
 
-.card-shadow { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-.card-shadow:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.14); transition: box-shadow 0.3s; }
+.card-shadow {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
+  transition: box-shadow 0.3s;
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll Animation Classes */
+.scroll-animate-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-animate-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-animate-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-animate-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-animate-scale {
+  animation: scaleIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Pause animations until element becomes visible */
+.scroll-animate-up,
+.scroll-animate-down,
+.scroll-animate-left,
+.scroll-animate-right,
+.scroll-animate-scale,
+.scroll-animate-stagger > * {
+  animation-play-state: paused;
+}
+
+/* Run animations when the animated element itself is visible */
+.animate-visible.scroll-animate-up,
+.animate-visible.scroll-animate-down,
+.animate-visible.scroll-animate-left,
+.animate-visible.scroll-animate-right,
+.animate-visible.scroll-animate-scale {
+  animation-play-state: running;
+}
+
+/* Or when a parent container receives .animate-visible (for sections that are observed at section-level) */
+.animate-visible .scroll-animate-up,
+.animate-visible .scroll-animate-down,
+.animate-visible .scroll-animate-left,
+.animate-visible .scroll-animate-right,
+.animate-visible .scroll-animate-scale {
+  animation-play-state: running;
+}
+
+/* Stagger children: run when parent or child becomes visible */
+.animate-visible.scroll-animate-stagger > *,
+.animate-visible .scroll-animate-stagger > * {
+  animation-play-state: running;
+}
+
+/* Stagger Animation for Lists */
+.scroll-animate-stagger > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-animate-stagger > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-animate-stagger > *:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.scroll-animate-stagger > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.scroll-animate-stagger > *:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.scroll-animate-stagger > *:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+.scroll-animate-stagger > *:nth-child(n+6) {
+  animation-delay: 0.75s;
+}
+
+/* Visible state */
+.animate-visible {
+  opacity: 1 !important;
+}
+
+/* Smooth scroll sections */
+section {
+  transition: all 0.3s ease;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}

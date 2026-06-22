@@ -1,3 +1,6 @@
+'use client';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
+
 const services = [
   {
     title: 'Frontend Development',
@@ -15,8 +18,9 @@ const services = [
 ];
 
 export default function Services() {
+  const containerRef = useScrollAnimation();
   return (
-    <section
+    <section ref={containerRef}
       id="services"
       style={{ padding: '80px 0', background: '#fafafa' }}
     >

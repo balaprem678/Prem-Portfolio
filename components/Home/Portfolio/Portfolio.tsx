@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import './Portfolio.scss';
 import { Images } from '@/components/Utilis/Images';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const projects = [
   {
@@ -33,19 +36,21 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const containerRef = useScrollAnimation();
+
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="portfolio" className="portfolio" ref={containerRef}>
       <div className="container">
-        <p className="portfolio-tag">My Work</p>
+        <p className="portfolio-tag scroll-animate-down">My Work</p>
 
-        <h2 className="section-title">Portfolio</h2>
+        <h2 className="section-title scroll-animate-up">Portfolio</h2>
 
-        <p className="section-subtitle">
+        <p className="section-subtitle scroll-animate-up">
           Explore some of my recent projects showcasing modern UI/UX,
           responsive web development, and creative digital experiences.
         </p>
 
-        <div className="portfolio-grid">
+        <div className="portfolio-grid scroll-animate-stagger">
           {projects.map((project) => (
             <div className="portfolio-card" key={project.id}>
               <div className="portfolio-image">
@@ -77,7 +82,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className="portfolio-footer">
+        <div className="portfolio-footer scroll-animate-up">
           <a href="#" className="see-all-btn">
             See All Work
           </a>

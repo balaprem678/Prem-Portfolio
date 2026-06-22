@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Images } from '../Utilis/Images'
+import useScrollAnimation from '@/hooks/useScrollAnimation'
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -15,6 +16,7 @@ export default function Contact() {
     email: '',
     phone: '',
   })
+  const containerRef = useScrollAnimation()
 
   const validateForm = () => {
     const newErrors = {
@@ -58,7 +60,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ padding: '80px 0', background: '#fff' }}>
+    <section id="contact" style={{ padding: '80px 0', background: '#fff' }} ref={containerRef}>
       <div
         className="contact-grid"
         style={{

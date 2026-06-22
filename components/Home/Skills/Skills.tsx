@@ -1,4 +1,6 @@
-import "./Blog.scss";
+'use client';
+import "./Skills.scss";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 import {
   FaReact,
   FaNodeJs,
@@ -34,10 +36,10 @@ const services = [
     title: "Frameworks & Libraries",
     description: "React.js, Angular.js",
     icon: (
-      <div className="double-icon">
+      <>
         <FaReact />
         <SiAngular />
-      </div>
+      </>
     ),
   },
   {
@@ -63,10 +65,10 @@ const services = [
     title: "AI Tools",
     description: "Claude AI, Perplexity AI",
     icon: (
-      <div className="double-icon">
+      <>
         <SiClaude />
         <SiPerplexity />
-      </div>
+      </>
     ),
   },
   {
@@ -79,32 +81,38 @@ const services = [
 ];
 
 export default function Skills() {
+  const containerRef = useScrollAnimation();
   return (
-    <section id="skills" className="skills-section">
+    <section className="skills-section" id="skills" ref={containerRef}>
       <div className="container">
-        <p className="section-tag">Technical Expertise</p>
+        <span className="section-tag">TECHNICAL EXPERTISE</span>
 
-        <h2 className="section-title">My Skills</h2>
+        <h2 className="section-title">
+          My <span>Skills</span>
+        </h2>
 
         <p className="section-subtitle">
           Experienced Frontend Developer with expertise in modern web
-          technologies, responsive design, API integration, UI development,
-          WordPress customization, and AI-assisted workflows.
+          technologies, responsive UI development, API integration,
+          WordPress customization and AI-powered workflows.
         </p>
 
-        <div className="skills-list">
-          {services.map((service) => (
-            <div className="skill-item" key={service.id}>
-              <div className="skill-icon">{service.icon}</div>
+        <div className="skills-grid">
+          {services.map((item) => (
+            <div className="skill-card" key={item.id}>
+              <div className="card-glow"></div>
 
-              <div className="skill-content">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
+              <div className="skill-icon">
+                {item.icon}
               </div>
 
               <span className="skill-number">
-                {String(service.id).padStart(2, "0")}
+                {String(item.id).padStart(2, "0")}
               </span>
+
+              <h3>{item.title}</h3>
+
+              <p>{item.description}</p>
             </div>
           ))}
         </div>

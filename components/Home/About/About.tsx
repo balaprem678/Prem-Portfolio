@@ -1,11 +1,14 @@
+'use client';
 import { Images } from "@/components/Utilis/Images";
 import "./About.scss";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function About() {
+  const containerRef = useScrollAnimation();
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" ref={containerRef}>
       <div className="container">
-        <div className="about-card about-grid">
+        <div className="about-card about-grid scroll-animate-up">
           <div className="profile-section">
             <div className="photo-placeholder">
               <img src={Images.myprofile2.src} alt="My Profile" className="profile-image" />
